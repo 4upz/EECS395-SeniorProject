@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/SteamVRTeleport.unity
+- path: Assets/Scenes/FPSSampleScene.unity
   isLoaded: 1
   isActive: 1
