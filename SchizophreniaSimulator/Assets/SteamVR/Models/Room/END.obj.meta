@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 39392228ecbf52c43a04d5515408852d
+guid: b8aac9c11e08be342a8ba72b9c29381b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,7 +7,7 @@ ModelImporter:
     100002: //RootNode
     400000: default
     400002: //RootNode
-    2100000: defaultMat
+    2100000: diffuse_Black
     2300000: default
     3300000: default
     4300000: default
