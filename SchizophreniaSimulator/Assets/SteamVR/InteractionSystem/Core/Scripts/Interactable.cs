@@ -270,7 +270,8 @@ namespace Valve.VR.InteractionSystem
 
         protected float blendToPoseTime = 0.1f;
         protected float releasePoseBlendTime = 0.2f;
-
+        [SerializeField] AudioSource audioData;
+        bool firstInteract = true;
         protected virtual void OnAttachedToHand(Hand hand)
         {
             if (activateActionSetOnAttach != null)
@@ -284,6 +285,12 @@ namespace Valve.VR.InteractionSystem
             if (skeletonPoser != null && hand.skeleton != null)
             {
                 hand.skeleton.BlendToPoser(skeletonPoser, blendToPoseTime);
+                if (firstInteract)
+                {
+                    firstInteract = false;
+                    audioData.Play(0);
+                    Debug.Log("audio started");
+                }
             }
 
             attachedToHand = hand;
