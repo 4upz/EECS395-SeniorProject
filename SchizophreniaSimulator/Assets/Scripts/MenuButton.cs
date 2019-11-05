@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuButtons : MonoBehaviour
+public class MenuButton : MonoBehaviour
 {
-   // Loads a given scene within the game
+    // Loads a given scene within the game
    public void LoadScene(string sceneName){
        SceneManager.LoadScene(sceneName);
    }
