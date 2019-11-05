@@ -10,10 +10,14 @@ public class ObjectManager : MonoBehaviour
 
     private bool objectMovementTriggered; // Boolean trigger for randomized object movement
 
-    //Upon object awake
-    void Awake(){
+    //Upon Start of Scene
+    void Start(){
         // Variable just for clarification of referenced object
         targetObject = gameObject;
+
+        /* This is just for testing the script. Remove when done */
+        IEnumerator trigger = SetTriggerAfterTime(10.0f);
+        StartCoroutine(trigger);
     }
 
     //Upon every frame
@@ -29,14 +33,14 @@ public class ObjectManager : MonoBehaviour
        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
        Transform newTransform = spawnPoints[spawnPointIndex];
        // Move the object's transform to the selected one from the array
-       targetObject.transform.position = newTransform.position;
-       targetObject.transform.rotation = newTransform.rotation;
+       targetObject.transform.localPosition = newTransform.position;
+       targetObject.transform.localRotation = newTransform.rotation;
        objectMovementTriggered = false;
    }
 
     // Alternative function that allows the object movement to be triggered after a certain amount of seconds
-   public IEnumerator SetTriggerAfterTime(float seconds){
-       yield return new WaitForSeconds(seconds);
+   public IEnumerator SetTriggerAfterTime(float waitTime){
+       yield return new WaitForSeconds(waitTime);
        objectMovementTriggered = true;
    }
 
