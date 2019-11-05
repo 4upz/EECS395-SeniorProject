@@ -61,7 +61,7 @@ public class cameraswitch : MonoBehaviour
         }
 
         loc = playerObj.transform.position.z;
-        Debug.Log(loc);
+        // Debug.Log(loc);
         if (loc < 2) {
             cam3.SetActive(true);
             cam1.SetActive(false);
