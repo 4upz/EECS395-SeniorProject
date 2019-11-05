@@ -46,14 +46,17 @@ public class RPCameraController : MonoBehaviour
 
         float count = (timer - 5) / 3.18f;
         float speed = (Mathf.Cos(count - 3.14f) + 1) / 2 + 1;
-        if (timer > 5 && rPCamera.perspective < 100) {
+        if (timer > 5 && timer < 15 && rPCamera.perspective < 200) {
             
-            rPCamera.perspective += 15 * speed * Time.deltaTime;
+            rPCamera.perspective += 30 * speed * Time.deltaTime;
             rPCamera.UpdateProjection(true);
         }
-        Debug.Log(timer);
-        Debug.Log("speed" + speed);
-        Debug.Log(rPCamera.perspective);
+        if (timer > 15 && rPCamera.perspective > 30)
+        {
+
+            rPCamera.perspective -= 50 * Time.deltaTime;
+            rPCamera.UpdateProjection(true);
+        }
     }
 
 }

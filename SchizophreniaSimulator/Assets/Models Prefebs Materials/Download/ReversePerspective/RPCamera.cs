@@ -8,7 +8,7 @@ public class RPCamera : MonoBehaviour {
     public Transform pivot = null;
 
 	[Tooltip("zero for parallel projection, negative for reverse perspective")]
-	[Range(-10.0f, 50.0f)]
+	[Range(-10.0f, 200.0f)]
     public float perspective = 0.0f;
 
 	private Camera m_camera;
