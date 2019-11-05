@@ -98,6 +98,7 @@
      <Compile Include="Assets\Scripts\FPSInput.cs" />
      <Compile Include="Assets\Scripts\MenuButton.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\ObjectManager.cs" />
      <Compile Include="Assets\Scripts\WinInteractable.cs" />
      <None Include="Assets\Models Prefebs Materials\Download\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Models Prefebs Materials\Download\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
