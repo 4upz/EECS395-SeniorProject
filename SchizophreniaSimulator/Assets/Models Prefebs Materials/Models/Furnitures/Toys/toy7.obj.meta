@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: e1608eb60700fb84b8e5bb5a9cfde3eb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: default
+    100002: //RootNode
+    400000: default
+    400002: //RootNode
+    2100000: CROMADO
+    2100002: Concrete_Form_4x8
+    2100004: 0136_Charcoal]1
+    2100006: diffuse_Black
+    2100008: 0132_LightGray
+    2100010: 0046_Gold
+    2100012: _24
+    2100014: 0128_White
+    2100016: 0020_Red
+    2100018: 0102_RoyalBlue
+    2100020: Color_009
+    2100022: _Black_
+    2100024: 0024_OrangeRed
+    2100026: _25
+    2100028: _26
+    2100030: _27
+    2100032: _28
+    2100034: _29
+    2100036: _30
+    2100038: Metal_Aluminum_Anodized]1
+    2100040: Metal_Corrogated_Shiny
+    2100042: _Charcoal_
+    2100044: Metal_Seamed
+    2100046: f1_f_sb
+    2100048: f1_f_tt
+    2100050: carbon
+    2100052: MAT
+    2100054: Matte_
+    2100056: _Cyan_
+    2100058: _DimGray_
+    2100060: f1_f_fus
+    2100062: williams1
+    2100064: williamssteerin1
+    2100066: _Gray
+    2100068: _Red_1
+    2100070: _MidnightBlue_
+    2100072: block1
+    2100074: f1_f_fsw
+    2100076: williamswing1
+    2100078: _DarkBlue_
+    2100080: carbfbd1
+    2100082: _Maroon_
+    2100084: f1_f_bw
+    2100086: _Magenta_
+    2100088: _MediumBlue_1
+    2100090: carbfbm1
+    2100092: _MediumBlue_
+    2100094: _LightCyan_
+    2100096: cockp1
+    2100098: f1_t_bs2
+    2100100: f1_t_t
+    2100102: _39
+    2100104: Color_007
+    2100106: Color_008]1
+    2100108: _31
+    2100110: _32
+    2100112: Color_A01
+    2100114: Unnamed
+    2100116: _35
+    2100118: _Gray8_
+    2100120: _37
+    2100122: _34
+    2100124: _38
+    2100126: Color_003
+    2300000: default
+    3300000: default
+    4300000: default
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
