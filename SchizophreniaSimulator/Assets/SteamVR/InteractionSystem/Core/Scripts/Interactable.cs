@@ -285,12 +285,12 @@ namespace Valve.VR.InteractionSystem
             if (skeletonPoser != null && hand.skeleton != null)
             {
                 hand.skeleton.BlendToPoser(skeletonPoser, blendToPoseTime);
-                if (firstInteract)
-                {
-                    firstInteract = false;
-                    audioData.Play(0);
-                    Debug.Log("audio started");
-                }
+            }
+
+            if (firstInteract)
+            {
+                firstInteract = false;
+                audioData.Play(0);
             }
 
             attachedToHand = hand;

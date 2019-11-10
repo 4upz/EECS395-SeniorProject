@@ -40,7 +40,7 @@ public class WinInteractable : MonoBehaviour
             {
                 print("Goal");
                 goalCount++;
-                Destroy(other.gameObject);
+                Destroy(goalObjects[i]);
             }
         }
     }
