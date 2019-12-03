@@ -10,6 +10,7 @@ public class IntroductionMessage : MonoBehaviour
     [SerializeField] private GameObject[] introText;        // Array of text to be shown for the simulation intro
     [SerializeField] private GameObject playerTeleporting; // The player's ability to move
     [SerializeField] private GameObject playerLaser;
+    [SerializeField] private PuzzleManager puzzleManager;
 
     private Button continueButton;      // The button to navigate the introduction messages
 
@@ -39,8 +40,9 @@ public class IntroductionMessage : MonoBehaviour
             playerTeleporting.SetActive(true);
             playerLaser.GetComponent<SteamVR_LaserPointer>().active = false;
             //playerLaser.GetComponent<SteamVR_LaserPointer>().enabled = false;
+            puzzleManager.enablePuzzles();
         }
-        // Else, set the next slide active
+        // Else, set the next slide active and increment the active index
         else {
             introText[++activeTextIndex].SetActive(true);
         }
