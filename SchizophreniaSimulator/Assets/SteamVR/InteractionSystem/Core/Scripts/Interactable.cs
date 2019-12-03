@@ -293,6 +293,14 @@ namespace Valve.VR.InteractionSystem
                 /** Insert custom audio trigger here **/
                 audioData.Play(0);
             }
+            /*
+            If (This is a distractor of the current puzzle){
+                audio.Data.Play(0);
+            }
+            Else{
+                Play a random clip from the list of audio clips
+            }
+            */
 
             attachedToHand = hand;
         }

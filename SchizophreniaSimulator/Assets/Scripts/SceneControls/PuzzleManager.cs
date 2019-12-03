@@ -19,8 +19,6 @@ public class PuzzleManager : MonoBehaviour
     {
         InitPuzzles();
         doorCollider = door.GetComponent<BoxCollider>();
-        currentGoalObject = puzzles[activePuzzleIndex].goalObject.targetObject;
-        setGoalInteractable(currentGoalObject);
         puzzlesCompleted = false;
     }
 
@@ -86,17 +84,23 @@ public class PuzzleManager : MonoBehaviour
     void setGoalInteractable(GameObject targetObject){
         currentGoalInteraction = currentGoalObject.AddComponent(typeof(GoalInteractable)) as GoalInteractable;
         currentGoalInteraction.InitGoalInteraction(this, doorCollider);
+        print($"Assigning: {targetObject.name}");
+
     }
 
     // Enables the puzzle system and displays the first riddle
     public void enablePuzzles(){
         riddleDisplay.gameObject.SetActive(true);
         riddleDisplay.text =  $"Object #{activePuzzleIndex+1}:\n{puzzles[activePuzzleIndex].riddle}";
+        currentGoalObject = puzzles[activePuzzleIndex].goalObject.targetObject;
+        setGoalInteractable(currentGoalObject);
     }
 
     public void nextPuzzle(){
         // If not already on the last object, assign the next puzzle to solve
-        if (++activePuzzleIndex <= puzzles.Length-1){
+        if (activePuzzleIndex < puzzles.Length-1){
+            currentGoalObject.SetActive(false);
+            activePuzzleIndex++;
             currentGoalObject = puzzles[activePuzzleIndex].goalObject.targetObject;
             setGoalInteractable(currentGoalObject);
             riddleDisplay.text = $"Object #{activePuzzleIndex+1}:\n{puzzles[activePuzzleIndex].riddle}";

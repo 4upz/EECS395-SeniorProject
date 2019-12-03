@@ -207,7 +207,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a91b6415688a0ec4b834f88b7f5bea7f, type: 3}
 --- !u!114 &3235050
@@ -5256,7 +5256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a28c29b4e20aca64e8964ca8a52e542b, type: 3}
       propertyPath: m_Name
-      value: GoalObject2
+      value: WallE
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a28c29b4e20aca64e8964ca8a52e542b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a28c29b4e20aca64e8964ca8a52e542b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5372,7 +5376,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c588b62ac4cf5da428850b5b4e513909, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6398,7 +6402,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 0c62b209d6a345646bdccb6a9a111f93, type: 3}
 --- !u!33 &1240746364
@@ -6699,7 +6703,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: cffb0d044c31665408d0575f3d940ba6, type: 3}
 --- !u!114 &1306330633
@@ -7987,7 +7991,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f63b54f77a362fd468d19d660d042e2b, type: 3}
 --- !u!114 &1436559977
@@ -8312,7 +8316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2cf6c6d67556f274c9b52b47ca6a3fd2, type: 3}
       propertyPath: m_Name
-      value: GoalObject3
+      value: BarbieDoll
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2cf6c6d67556f274c9b52b47ca6a3fd2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2cf6c6d67556f274c9b52b47ca6a3fd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8766,7 +8774,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: df2fb7d9b6229e84e9e286ad4385da82, type: 3}
 --- !u!114 &1470045100

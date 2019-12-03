@@ -46,6 +46,5 @@ public class IntroductionMessage : MonoBehaviour
         else {
             introText[++activeTextIndex].SetActive(true);
         }
-        Debug.Log(activeTextIndex);
     }
 }

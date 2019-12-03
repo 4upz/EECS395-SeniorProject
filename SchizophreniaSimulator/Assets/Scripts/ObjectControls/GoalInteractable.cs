@@ -16,8 +16,8 @@ public class GoalInteractable : MonoBehaviour
             // GameObject.Destroy(gameObject);
             // Trigger success audio clip
             puzzleManager.nextPuzzle();
-            print($"Destroying: {gameObject.name}");
-            GameObject.Destroy(gameObject);
+            print($"Disabling: {gameObject.name}");
+            this.enabled = false;
         }
     }
 
