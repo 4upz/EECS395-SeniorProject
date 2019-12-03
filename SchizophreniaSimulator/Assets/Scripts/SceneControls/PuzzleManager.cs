@@ -108,7 +108,7 @@ public class PuzzleManager : MonoBehaviour
         else {
             puzzlesCompleted = true;
             riddleDisplay.text = "Congrats! You found everything!";
-            // Insert 'Open Door' function here
+            door.GetComponent<opendoor>().enabled = true;
             print("Congratulations! You finished!");
         }
     }
