@@ -24,7 +24,6 @@ public class opendoor : MonoBehaviour
         {
 
             timer += Time.deltaTime;
-            print(timer);
             if (timer < 4)
             {
                 rotate = true;

@@ -30,55 +30,44 @@ public class PuzzleManager : MonoBehaviour
 
     // Initializes the puzzles with the given riddles and designated game objects
     void InitPuzzles(){
-        // GameObjects to be used for each puzzle
+        // GameObjects and riddle to be used for the corresponding puzzle
         GameObject goalObject;
         GameObject distractorOne;
         GameObject distractorTwo;
+        string riddle;
 
         /** Create the first riddle **/
-        Puzzle puzzleOne = new Puzzle();
-        puzzleOne.riddle = "Your sister always thinks she's a superhero. Find her favorite toy.";
+        riddle = "Your sister always thinks she's a superhero. Find her favorite toy.";
         goalObject = GameObject.Find("GoalObject1");
-        puzzleOne.goalObject = new Puzzle.PuzzleObject(goalObject, goalObject.GetComponent<AudioSource>());
         // Initialize DistractorOne
         distractorOne = GameObject.Find("toy16");
-        puzzleOne.distractorOne = new Puzzle.PuzzleObject(distractorOne, goalObject.GetComponent<AudioSource>());
         // Initialize DistractorTwo
         distractorTwo = GameObject.Find("toy3");
-        puzzleOne.distractorTwo = new Puzzle.PuzzleObject(distractorTwo, goalObject.GetComponent<AudioSource>());
         // Initialize other potential audio clips (currently none)
-        // Make the first puzzle the active puzzle;  
+        // Save the data into the Puzzle array
+        puzzles[0] = new Puzzle(riddle, goalObject, distractorOne, distractorTwo);
 
         /** Create the second riddle **/
-        Puzzle puzzleTwo = new Puzzle();
-        puzzleTwo.riddle = "Your brother tends to keep one eye out for this toy, but still lost it. Find his favorite toy.";
+        riddle = "Your brother tends to keep one eye out for this toy, but still lost it. Find his favorite toy.";
         goalObject = GameObject.Find("GoalObject2");
-        puzzleTwo.goalObject = new Puzzle.PuzzleObject(goalObject, goalObject.GetComponent<AudioSource>());
         // Initialize DistractorOne
         distractorOne = GameObject.Find("toy10");
-        puzzleTwo.distractorOne = new Puzzle.PuzzleObject(distractorOne, goalObject.GetComponent<AudioSource>());
         // Initialize DistractorTwo
         distractorTwo = GameObject.Find("toy7");
-        puzzleTwo.distractorTwo = new Puzzle.PuzzleObject(distractorTwo, goalObject.GetComponent<AudioSource>());
         // Initialize other potential audio clips (currently none)
+        // Save the data into the Puzzle array
+        puzzles[1] = new Puzzle(riddle, goalObject, distractorOne, distractorTwo);
 
         /** Create the third riddle **/
-        Puzzle puzzleThree = new Puzzle();
-        puzzleThree.riddle = "You can't forget your own toy! It tends to bounce around a lot so you better try to find it.";
+        riddle = "You can't forget your own toy! It tends to bounce around a lot so you better try to find it.";
         goalObject = GameObject.Find("GoalObject3");
-        puzzleThree.goalObject = new Puzzle.PuzzleObject(goalObject, goalObject.GetComponent<AudioSource>());
         // Initialize DistractorOne
         distractorOne = GameObject.Find("BlankBall");
-        puzzleThree.distractorOne = new Puzzle.PuzzleObject(distractorOne, goalObject.GetComponent<AudioSource>());
         // Initialize DistractorTwo
         distractorTwo = GameObject.Find("toy5");
-        puzzleThree.distractorTwo = new Puzzle.PuzzleObject(distractorTwo, goalObject.GetComponent<AudioSource>());
-        // Initialize other potential audio clips (currently none)  
-
-        // Add the puzzles to the array
-        puzzles[0] = puzzleOne;
-        puzzles[1] = puzzleTwo;
-        puzzles[2] = puzzleThree;
+        // Initialize other potential audio clips (currently none)
+        // Save the data into the Puzzle array
+        puzzles[2] = new Puzzle(riddle, goalObject, distractorOne, distractorTwo);  
     }
 
     void setGoalInteractable(GameObject targetObject){
@@ -92,7 +81,7 @@ public class PuzzleManager : MonoBehaviour
     public void enablePuzzles(){
         riddleDisplay.gameObject.SetActive(true);
         riddleDisplay.text =  $"Object #{activePuzzleIndex+1}:\n{puzzles[activePuzzleIndex].riddle}";
-        currentGoalObject = puzzles[activePuzzleIndex].goalObject.targetObject;
+        currentGoalObject = puzzles[activePuzzleIndex].goalObject;
         setGoalInteractable(currentGoalObject);
     }
 
@@ -101,7 +90,7 @@ public class PuzzleManager : MonoBehaviour
         if (activePuzzleIndex < puzzles.Length-1){
             currentGoalObject.SetActive(false);
             activePuzzleIndex++;
-            currentGoalObject = puzzles[activePuzzleIndex].goalObject.targetObject;
+            currentGoalObject = puzzles[activePuzzleIndex].goalObject;
             setGoalInteractable(currentGoalObject);
             riddleDisplay.text = $"Object #{activePuzzleIndex+1}:\n{puzzles[activePuzzleIndex].riddle}";
         }
