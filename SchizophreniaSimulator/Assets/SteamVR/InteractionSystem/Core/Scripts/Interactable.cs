@@ -290,6 +290,7 @@ namespace Valve.VR.InteractionSystem
             if (firstInteract)
             {
                 firstInteract = false;
+                /** Insert custom audio trigger here **/
                 audioData.Play(0);
             }
 

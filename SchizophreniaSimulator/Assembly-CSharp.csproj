@@ -147,9 +147,9 @@
      <Compile Include="Assets\Models Prefebs Materials\Download\Starfield Skybox\Demo\Script\LookCamera.cs" />
      <Compile Include="Assets\Scripts\blackmode.cs" />
      <Compile Include="Assets\Scripts\cameraswitch.cs" />
+     <Compile Include="Assets\Scripts\ObjectControls\GoalInteractable.cs" />
      <Compile Include="Assets\Scripts\ObjectControls\ObjectManager.cs" />
      <Compile Include="Assets\Scripts\ObjectControls\opendoor.cs" />
-     <Compile Include="Assets\Scripts\ObjectControls\WinInteractable.cs" />
      <Compile Include="Assets\Scripts\rotatesky.cs" />
      <Compile Include="Assets\Scripts\SceneControls\FPSInput.cs" />
      <Compile Include="Assets\Scripts\SceneControls\MouseLook.cs" />
