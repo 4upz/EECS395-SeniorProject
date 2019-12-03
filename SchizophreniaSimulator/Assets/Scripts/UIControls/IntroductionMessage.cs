@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR.Extras;
 
 public class IntroductionMessage : MonoBehaviour
 {
 
     [SerializeField] private GameObject[] introText;        // Array of text to be shown for the simulation intro
     [SerializeField] private GameObject playerTeleporting; // The player's ability to move
+    [SerializeField] private GameObject playerLaser;
 
     private Button continueButton;      // The button to navigate the introduction messages
 
@@ -35,6 +37,8 @@ public class IntroductionMessage : MonoBehaviour
         if (activeTextIndex == introText.Length-1){
             continueButton.gameObject.SetActive(false);
             playerTeleporting.SetActive(true);
+            playerLaser.GetComponent<SteamVR_LaserPointer>().active = false;
+            //playerLaser.GetComponent<SteamVR_LaserPointer>().enabled = false;
         }
         // Else, set the next slide active
         else {

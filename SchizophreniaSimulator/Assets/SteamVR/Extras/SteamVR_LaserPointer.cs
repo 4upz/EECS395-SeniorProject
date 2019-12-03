@@ -91,10 +91,15 @@ namespace Valve.VR.Extras
 
         private void Update()
         {
-            if (!isActive)
+            if (active != isActive)
             {
-                isActive = true;
-                this.transform.GetChild(0).gameObject.SetActive(true);
+                isActive = active;
+                pointer?.SetActive(isActive);
+            }
+            else if (!isActive)
+            {
+                pointer.transform.localPosition = new Vector3(0f, -10f, 0f);
+                return;
             }
 
             float dist = 100f;
