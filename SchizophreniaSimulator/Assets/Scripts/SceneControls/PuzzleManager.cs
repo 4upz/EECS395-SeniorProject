@@ -7,8 +7,8 @@ public class PuzzleManager : MonoBehaviour
 {
 
     public Puzzle[] puzzles = new Puzzle[3];        // The list of puzzles to be assigned to the player
-    public Puzzle activePuzzle;                     // The currently active puzzle
-    public Text riddleDisplay;                            // The text element that will display the puzzle riddle in the world space
+    public int activePuzzleIndex = 0;                   // The currently active puzzle
+    public Text riddleDisplay;                      // The text element that will display the puzzle riddle in the world space
 
     // Start is called before the first frame update
     void Start()
@@ -24,23 +24,66 @@ public class PuzzleManager : MonoBehaviour
 
     // Initializes the puzzles with the given riddles and designated game objects
     void InitPuzzles(){
-        Puzzle PuzzleOne = new Puzzle();
-        PuzzleOne.riddle = "Your sister always thinks she's a superhero. Find her favorite toy.";
-        GameObject goalObject = GameObject.Find("GoalObject3");
-        PuzzleOne.goalObject = new Puzzle.PuzzleObject(goalObject, goalObject.GetComponent<AudioSource>());
-        /* TODO Fill these in **/
-        // Initialize DistractorOne
-        // Initialize DistractorTwo
-        // Initialize other potential audio clips
-        // Make the first puzzle the active puzzle;
-        activePuzzle = PuzzleOne;   
+        // GameObjects to be used for each puzzle
+        GameObject goalObject;
+        GameObject distractorOne;
+        GameObject distractorTwo;
 
-        /** TODO Repeat for the other two riddles **/
+        /** Create the first riddle **/
+        Puzzle puzzleOne = new Puzzle();
+        puzzleOne.riddle = "Your sister always thinks she's a superhero. Find her favorite toy.";
+        goalObject = GameObject.Find("GoalObject1");
+        puzzleOne.goalObject = new Puzzle.PuzzleObject(goalObject, goalObject.GetComponent<AudioSource>());
+        // Initialize DistractorOne
+        distractorOne = GameObject.Find("toy16");
+        puzzleOne.distractorOne = new Puzzle.PuzzleObject(distractorOne, goalObject.GetComponent<AudioSource>());
+        // Initialize DistractorTwo
+        distractorTwo = GameObject.Find("toy3");
+        puzzleOne.distractorTwo = new Puzzle.PuzzleObject(distractorTwo, goalObject.GetComponent<AudioSource>());
+        // Initialize other potential audio clips (currently none)
+        // Make the first puzzle the active puzzle;  
+
+        /** Create the second riddle **/
+        Puzzle puzzleTwo = new Puzzle();
+        puzzleTwo.riddle = "Your brother tends to keep one eye out for this toy, but still lost it. Find his favorite toy.";
+        goalObject = GameObject.Find("GoalObject2");
+        puzzleTwo.goalObject = new Puzzle.PuzzleObject(goalObject, goalObject.GetComponent<AudioSource>());
+        // Initialize DistractorOne
+        distractorOne = GameObject.Find("toy10");
+        puzzleTwo.distractorOne = new Puzzle.PuzzleObject(distractorOne, goalObject.GetComponent<AudioSource>());
+        // Initialize DistractorTwo
+        distractorTwo = GameObject.Find("toy7");
+        puzzleTwo.distractorTwo = new Puzzle.PuzzleObject(distractorTwo, goalObject.GetComponent<AudioSource>());
+        // Initialize other potential audio clips (currently none)
+
+        /** Create the third riddle **/
+        Puzzle puzzleThree = new Puzzle();
+        puzzleThree.riddle = "You can't forget your own toy! It tends to bounce around a lot so you better try to find it.";
+        goalObject = GameObject.Find("GoalObject3");
+        puzzleThree.goalObject = new Puzzle.PuzzleObject(goalObject, goalObject.GetComponent<AudioSource>());
+        // Initialize DistractorOne
+        distractorOne = GameObject.Find("BlankBall");
+        puzzleThree.distractorOne = new Puzzle.PuzzleObject(distractorOne, goalObject.GetComponent<AudioSource>());
+        // Initialize DistractorTwo
+        distractorTwo = GameObject.Find("toy5");
+        puzzleThree.distractorTwo = new Puzzle.PuzzleObject(distractorTwo, goalObject.GetComponent<AudioSource>());
+        // Initialize other potential audio clips (currently none)  
+
+        // Add the puzzles to the array
+        puzzles[0] = puzzleOne;
+        puzzles[1] = puzzleTwo;
+        puzzles[2] = puzzleThree;
     }
 
     // Enables the puzzle system and displays the first riddle
     public void enablePuzzles(){
         riddleDisplay.gameObject.SetActive(true);
-        riddleDisplay.text = $"Object #1:\n{activePuzzle.riddle}";
+        riddleDisplay.text =  $"Object #{activePuzzleIndex+1}:\n{puzzles[activePuzzleIndex].riddle}";
+    }
+
+    public void nextPuzzle(){
+        if (activePuzzleIndex < puzzles.Length-1){
+            riddleDisplay.text = $"Object #{activePuzzleIndex+1}:\n{puzzles[activePuzzleIndex].riddle}";
+        }
     }
 }
