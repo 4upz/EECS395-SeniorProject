@@ -21,16 +21,17 @@ public class GoalInteractable : MonoBehaviour
     }
 
     // Reacts to being taken within distance of the door
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other == destinationCollider && isNotBeingHeld){
+        if (other == destinationCollider && isNotBeingHeld)
+        {
             print("Reached goal with correct object");
             // GameObject.Destroy(gameObject);
             // Trigger success audio clip
             puzzleManager.nextPuzzle();
             print($"Disabling: {gameObject.name}");
-            //this.enabled = false;
-            this.gameObject.SetActive(false);
+            this.enabled = false;
+            //this.gameObject.SetActive(false);
         }
     }
 
