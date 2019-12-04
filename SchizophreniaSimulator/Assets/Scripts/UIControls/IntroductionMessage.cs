@@ -11,6 +11,7 @@ public class IntroductionMessage : MonoBehaviour
     [SerializeField] private GameObject playerTeleporting; // The player's ability to move
     [SerializeField] private GameObject playerLaser;
     [SerializeField] private PuzzleManager puzzleManager;
+    [SerializeField] private GameObject door;
 
     private Button continueButton;      // The button to navigate the introduction messages
 
@@ -41,6 +42,7 @@ public class IntroductionMessage : MonoBehaviour
             playerLaser.GetComponent<SteamVR_LaserPointer>().active = false;
             //playerLaser.GetComponent<SteamVR_LaserPointer>().enabled = false;
             puzzleManager.enablePuzzles();
+            door.SetActive(true);
         }
         // Else, set the next slide active and increment the active index
         else {

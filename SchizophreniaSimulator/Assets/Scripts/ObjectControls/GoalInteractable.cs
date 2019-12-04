@@ -17,7 +17,8 @@ public class GoalInteractable : MonoBehaviour
             // Trigger success audio clip
             puzzleManager.nextPuzzle();
             print($"Disabling: {gameObject.name}");
-            this.enabled = false;
+            //this.enabled = false;
+            this.gameObject.SetActive(false);
         }
     }
 
