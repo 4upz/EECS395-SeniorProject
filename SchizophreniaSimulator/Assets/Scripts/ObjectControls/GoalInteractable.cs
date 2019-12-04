@@ -8,6 +8,10 @@ public class GoalInteractable : MonoBehaviour
     private BoxCollider destinationCollider;    // The collider of the destination object for this goal
     private PuzzleManager puzzleManager;        // The manager of the puzzle system
 
+    void Start(){
+
+    }
+
     // Reacts to being taken within distance of the door
     void OnTriggerEnter(Collider other)
     {

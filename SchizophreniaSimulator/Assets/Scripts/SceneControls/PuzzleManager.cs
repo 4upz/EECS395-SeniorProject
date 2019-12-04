@@ -70,8 +70,11 @@ public class PuzzleManager : MonoBehaviour
         puzzles[2] = new Puzzle(riddle, goalObject, distractorOne, distractorTwo);  
     }
 
+    // Enable the given object as the currently interactable goal object
     void setGoalInteractable(GameObject targetObject){
-        currentGoalInteraction = currentGoalObject.AddComponent(typeof(GoalInteractable)) as GoalInteractable;
+        // currentGoalInteraction = currentGoalObject.AddComponent(typeof(GoalInteractable)) as GoalInteractable;
+        currentGoalInteraction = currentGoalObject.GetComponent<GoalInteractable>();
+        currentGoalInteraction.enabled = true;
         currentGoalInteraction.InitGoalInteraction(this, doorCollider);
         print($"Assigning: {targetObject.name}");
 
