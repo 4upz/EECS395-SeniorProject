@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class GoalInteractable : MonoBehaviour
 {
     private BoxCollider destinationCollider;    // The collider of the destination object for this goal
     private PuzzleManager puzzleManager;        // The manager of the puzzle system
+    private Throwable throwInteraction;         // The throw interaction script on this object
+    public bool isNotBeingHeld;                 // Whether this object is being held
 
     void Start(){
+        throwInteraction = gameObject.GetComponent<Throwable>();
+    }
 
+    void Update()
+    {
+        isNotBeingHeld = !throwInteraction.attached;
     }
 
     // Reacts to being taken within distance of the door
     void OnTriggerEnter(Collider other)
     {
-        if (other == destinationCollider){
+        if (other == destinationCollider && isNotBeingHeld){
             print("Reached goal with correct object");
             // GameObject.Destroy(gameObject);
             // Trigger success audio clip

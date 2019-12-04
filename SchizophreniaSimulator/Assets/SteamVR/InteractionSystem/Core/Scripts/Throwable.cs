@@ -43,13 +43,13 @@ namespace Valve.VR.InteractionSystem
 
 
 		protected VelocityEstimator velocityEstimator;
-        protected bool attached = false;
         protected float attachTime;
         protected Vector3 attachPosition;
         protected Quaternion attachRotation;
         protected Transform attachEaseInTransform;
 
-		public UnityEvent onPickUp;
+        public bool attached = false;
+        public UnityEvent onPickUp;
         public UnityEvent onDetachFromHand;
         public HandEvent onHeldUpdate;
 
