@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class PuzzleManager : MonoBehaviour
 {
     public Puzzle[] puzzles = new Puzzle[3];                // The list of puzzles to be assigned to the player
-    public int activePuzzleIndex = 0;                       // The currently active puzzle
+    public int activePuzzleIndex = 0;                       // The index of the currently active puzzle
     public Text riddleDisplay;                              // The text element that will display the puzzle riddle in the world space  
     public GameObject door;                                 // The door of the room
+    public bool puzzlesEnabled = false;                     // Whether the tutorial is clear and the puzzles have been enabled
     private BoxCollider doorCollider;                       // The collider of the room door
     private GameObject currentGoalObject;                   // The goal of the current riddle
     private GoalInteractable currentGoalInteraction;        // The script tracking the interaction of the current goal object
     private bool puzzlesCompleted;                          // Whether all of the puzzles have been completed 
+    private AudioSource audioSource;                        // The audio source attached that will be used for visual displacement
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +22,6 @@ public class PuzzleManager : MonoBehaviour
         InitPuzzles();
         doorCollider = door.GetComponent<BoxCollider>();
         puzzlesCompleted = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     // Initializes the puzzles with the given riddles and designated game objects
@@ -37,7 +33,7 @@ public class PuzzleManager : MonoBehaviour
         string riddle;
 
         /** Create the first riddle **/
-        riddle = "Your sister always thinks she's a superhero. Find her favorite toy.";
+        riddle = "Your sister always thinks she's a princess but looks weird for one. Find her favorite toy.";
         goalObject = GameObject.Find("GoalObject1");
         // Initialize DistractorOne
         distractorOne = GameObject.Find("toy16");
@@ -82,6 +78,7 @@ public class PuzzleManager : MonoBehaviour
 
     // Enables the puzzle system and displays the first riddle
     public void enablePuzzles(){
+        puzzlesEnabled = true;
         riddleDisplay.gameObject.SetActive(true);
         riddleDisplay.text =  $"Object #{activePuzzleIndex+1}:\n{puzzles[activePuzzleIndex].riddle}";
         currentGoalObject = puzzles[activePuzzleIndex].goalObject;
@@ -103,5 +100,9 @@ public class PuzzleManager : MonoBehaviour
             door.GetComponent<opendoor>().enabled = true;
             print("Congratulations! You finished!");
         }
+    }
+
+    public GameObject getCurrentGoalObject(){
+        return currentGoalObject;
     }
 }

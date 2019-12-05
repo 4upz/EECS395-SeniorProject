@@ -1,6 +1,7 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 //
 // Purpose: This object will get hover events and can be attached to the hands
+// Modified for the use of the Schizophrenia VR Simulation
 //
 //=============================================================================
 
@@ -80,14 +81,21 @@ namespace Valve.VR.InteractionSystem
         public bool isHovering { get; protected set; }
         public bool wasHovering { get; protected set; }
 
+        [System.NonSerialized]
+        public bool isGoalInteractable;                         // Whether this object is an interactable goal object
+
+        private AudioSource audioSource;                        // The audio source attached to this component
+        [SerializeField] private AudioClip[] distractionClips;  // The array of different herring voice clips for each riddle
 
         private void Awake()
         {
             skeletonPoser = GetComponent<SteamVR_Skeleton_Poser>();
+            isGoalInteractable = false;
         }
 
         protected virtual void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             highlightMat = (Material)Resources.Load("SteamVR_HoverHighlight", typeof(Material));
 
             if (highlightMat == null)
@@ -270,7 +278,6 @@ namespace Valve.VR.InteractionSystem
 
         protected float blendToPoseTime = 0.1f;
         protected float releasePoseBlendTime = 0.2f;
-        [SerializeField] AudioSource audioData;
         bool firstInteract = true;
         protected virtual void OnAttachedToHand(Hand hand)
         {
@@ -287,20 +294,15 @@ namespace Valve.VR.InteractionSystem
                 hand.skeleton.BlendToPoser(skeletonPoser, blendToPoseTime);
             }
 
-            if (firstInteract)
-            {
-                firstInteract = false;
-                /** Insert custom audio trigger here **/
-                audioData.Play(0);
+            // Play if the track isn't already playing
+            if (!audioSource.isPlaying){
+                if (!isGoalInteractable){
+                    // TODO: Change this to grab the distraction for the current riddle
+                    audioSource.clip = distractionClips[Random.Range(0,distractionClips.Length-1)];
+                }
+                audioSource.panStereo = Random.Range(-1, 1);
+                audioSource.Play();
             }
-            /*
-            If (This is a distractor of the current puzzle){
-                audio.Data.Play(0);
-            }
-            Else{
-                Play a random clip from the list of audio clips
-            }
-            */
 
             attachedToHand = hand;
         }

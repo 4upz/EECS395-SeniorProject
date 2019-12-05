@@ -8,14 +8,23 @@ public class opendoor : MonoBehaviour
     public int whichdoor;
     private GameObject playerObj;
     private float timer = 0.0f;
+    private AudioSource audioSource;
 
     void Start()
     {
         playerObj = GameObject.Find("Player");
+        audioSource = GetComponent<AudioSource>();
+        if (!audioSource.isPlaying){
+            audioSource.panStereo = 1;
+            audioSource.Play();
+        }
     }
 
     void Update()
     {
+        if (audioSource.time == 3){
+            audioSource.panStereo = -1;
+        }
 
         float rotation = 30 * Time.deltaTime;
         float loc = playerObj.transform.position.z;

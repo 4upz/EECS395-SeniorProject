@@ -9,10 +9,17 @@ public class GoalInteractable : MonoBehaviour
     private BoxCollider destinationCollider;    // The collider of the destination object for this goal
     private PuzzleManager puzzleManager;        // The manager of the puzzle system
     private Throwable throwInteraction;         // The throw interaction script on this object
+    private Interactable standardInteraction;   // The default interaction mechanics of this object
+    private AudioSource audioSource;            // The audio source component attached to this object
     public bool isNotBeingHeld;                 // Whether this object is being held
+    public AudioClip goalClip;                  // Voice audio clip denoting success of goal
 
     void Start(){
-        throwInteraction = gameObject.GetComponent<Throwable>();
+        throwInteraction = GetComponent<Throwable>();
+        standardInteraction = GetComponent<Interactable>();
+        standardInteraction.isGoalInteractable = true;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = goalClip;
     }
 
     void Update()
@@ -26,12 +33,10 @@ public class GoalInteractable : MonoBehaviour
         if (other == destinationCollider && isNotBeingHeld)
         {
             print("Reached goal with correct object");
-            // GameObject.Destroy(gameObject);
             // Trigger success audio clip
             puzzleManager.nextPuzzle();
             print($"Disabling: {gameObject.name}");
             this.enabled = false;
-            //this.gameObject.SetActive(false);
         }
     }
 
