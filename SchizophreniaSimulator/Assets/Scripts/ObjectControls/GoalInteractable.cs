@@ -33,7 +33,6 @@ public class GoalInteractable : MonoBehaviour
         if (other == destinationCollider && isNotBeingHeld)
         {
             print("Reached goal with correct object");
-            // Trigger success audio clip
             puzzleManager.nextPuzzle();
             print($"Disabling: {gameObject.name}");
             this.enabled = false;

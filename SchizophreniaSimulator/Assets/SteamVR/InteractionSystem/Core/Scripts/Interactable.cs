@@ -83,6 +83,7 @@ namespace Valve.VR.InteractionSystem
 
         [System.NonSerialized]
         public bool isGoalInteractable;                         // Whether this object is an interactable goal object
+        public static int currentPuzzle;                               // The current active puzzle in the scene
 
         private AudioSource audioSource;                        // The audio source attached to this component
         [SerializeField] private AudioClip[] distractionClips;  // The array of different herring voice clips for each riddle
@@ -91,6 +92,7 @@ namespace Valve.VR.InteractionSystem
         {
             skeletonPoser = GetComponent<SteamVR_Skeleton_Poser>();
             isGoalInteractable = false;
+            currentPuzzle = 0;
         }
 
         protected virtual void Start()
@@ -297,8 +299,8 @@ namespace Valve.VR.InteractionSystem
             // Play if the track isn't already playing
             if (!audioSource.isPlaying){
                 if (!isGoalInteractable){
-                    // TODO: Change this to grab the distraction for the current riddle
-                    audioSource.clip = distractionClips[Random.Range(0,distractionClips.Length-1)];
+                    // Grab the distraction for the current riddle
+                    audioSource.clip = distractionClips[currentPuzzle];
                 }
                 audioSource.panStereo = Random.Range(-1, 1);
                 audioSource.Play();

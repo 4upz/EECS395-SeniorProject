@@ -1797,6 +1797,7 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   distractionClips:
+  - {fileID: 8300000, guid: e5a722d591886674ebf945d7bb0ed02f, type: 3}
   - {fileID: 8300000, guid: ec418a2b5fd555542aa690cb9e461f48, type: 3}
   - {fileID: 8300000, guid: e7f37e7af5742cb43895f5883b8b1c29, type: 3}
 --- !u!1001 &241798622
@@ -4154,6 +4155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3e958bbca16254c971a3e8e032c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   activePuzzleIndex: 0
   riddleDisplay: {fileID: 919736099}
   door: {fileID: 1597228997}
@@ -4982,7 +4984,8 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   distractionClips:
-  - {fileID: 8300000, guid: ec418a2b5fd555542aa690cb9e461f48, type: 3}
+  - {fileID: 8300000, guid: d1dd487fed9ee6546a531538425fa6bb, type: 3}
+  - {fileID: 8300000, guid: d092bf043d8dcc24e84b44f9eb476fc2, type: 3}
   - {fileID: 8300000, guid: e7f37e7af5742cb43895f5883b8b1c29, type: 3}
 --- !u!1 &975730908
 GameObject:
@@ -7767,6 +7770,7 @@ MonoBehaviour:
   distractionClips:
   - {fileID: 8300000, guid: d1dd487fed9ee6546a531538425fa6bb, type: 3}
   - {fileID: 8300000, guid: ec418a2b5fd555542aa690cb9e461f48, type: 3}
+  - {fileID: 8300000, guid: 17721cf70a70a2d4d8918cacb7168f46, type: 3}
 --- !u!135 &1428437289
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8526,7 +8530,8 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   distractionClips:
-  - {fileID: 8300000, guid: ec418a2b5fd555542aa690cb9e461f48, type: 3}
+  - {fileID: 8300000, guid: d1dd487fed9ee6546a531538425fa6bb, type: 3}
+  - {fileID: 8300000, guid: a20558d253bc16a4c85ad903b8760d12, type: 3}
   - {fileID: 8300000, guid: e7f37e7af5742cb43895f5883b8b1c29, type: 3}
 --- !u!82 &1436559980
 AudioSource:
@@ -11549,8 +11554,9 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   distractionClips:
+  - {fileID: 8300000, guid: d1dd487fed9ee6546a531538425fa6bb, type: 3}
   - {fileID: 8300000, guid: ec418a2b5fd555542aa690cb9e461f48, type: 3}
-  - {fileID: 8300000, guid: e7f37e7af5742cb43895f5883b8b1c29, type: 3}
+  - {fileID: 8300000, guid: 17721cf70a70a2d4d8918cacb7168f46, type: 3}
 --- !u!1 &1644094849 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 2813a30a4d61c2e42b2380a139831223,
@@ -12945,7 +12951,7 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   distractionClips:
-  - {fileID: 8300000, guid: d1dd487fed9ee6546a531538425fa6bb, type: 3}
+  - {fileID: 8300000, guid: e5a722d591886674ebf945d7bb0ed02f, type: 3}
   - {fileID: 8300000, guid: ec418a2b5fd555542aa690cb9e461f48, type: 3}
   - {fileID: 8300000, guid: e7f37e7af5742cb43895f5883b8b1c29, type: 3}
 --- !u!1001 &1882430928
@@ -13936,7 +13942,7 @@ PrefabInstance:
     - target: {fileID: 114000012133941026, guid: e0b086fbb874df143b6ac8f53cea5424,
         type: 3}
       propertyPath: attachmentFlags
-      value: 341
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 114000011129258500, guid: e0b086fbb874df143b6ac8f53cea5424,
         type: 3}
@@ -13958,7 +13964,7 @@ PrefabInstance:
     - target: {fileID: 114000012872173436, guid: e0b086fbb874df143b6ac8f53cea5424,
         type: 3}
       propertyPath: distractionClips.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114000012872173436, guid: e0b086fbb874df143b6ac8f53cea5424,
         type: 3}
@@ -13973,6 +13979,11 @@ PrefabInstance:
     - target: {fileID: 114000012872173436, guid: e0b086fbb874df143b6ac8f53cea5424,
         type: 3}
       propertyPath: distractionClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ec418a2b5fd555542aa690cb9e461f48, type: 3}
+    - target: {fileID: 114000012872173436, guid: e0b086fbb874df143b6ac8f53cea5424,
+        type: 3}
+      propertyPath: distractionClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: e7f37e7af5742cb43895f5883b8b1c29, type: 3}
     - target: {fileID: 1000012261516340, guid: e0b086fbb874df143b6ac8f53cea5424, type: 3}
@@ -14753,6 +14764,7 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   distractionClips:
+  - {fileID: 8300000, guid: b45a183b006d0b24bbe1c1a1b4e5c1f8, type: 3}
   - {fileID: 8300000, guid: ec418a2b5fd555542aa690cb9e461f48, type: 3}
   - {fileID: 8300000, guid: e7f37e7af5742cb43895f5883b8b1c29, type: 3}
 --- !u!1 &2135069055
