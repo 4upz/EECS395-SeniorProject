@@ -1,0 +1,25 @@
+# Blender MTL File: 'cleaner.blend'
+# Material Count: 2
+
+newmtl brushes
+Ns 506.250000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.0 0.0 0.0
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl cleaner_pbr
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.100000 cleam normal_map.png
+map_Kd cleaner color map.png
+map_Ns rougness.png
