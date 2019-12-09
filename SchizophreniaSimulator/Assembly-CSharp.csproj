@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\disappear.cs" />
      <Compile Include="Assets\Models Prefebs Materials\Download\AlignInEditor\AlignInEditor.cs" />
      <Compile Include="Assets\Models Prefebs Materials\Download\CameraShakeFX\Scripts\StressReceiver.cs" />
      <Compile Include="Assets\Models Prefebs Materials\Download\CameraShakeFX\Scripts\TraumaInducer.cs" />
