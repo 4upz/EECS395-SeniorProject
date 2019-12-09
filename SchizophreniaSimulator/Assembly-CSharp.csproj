@@ -349,6 +349,12 @@
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>C:/Users/Harvard/Documents/EECS395-SeniorProject/SchizophreniaSimulator/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>C:/Users/Harvard/Documents/EECS395-SeniorProject/SchizophreniaSimulator/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>C:/Users/Harvard/Documents/EECS395-SeniorProject/SchizophreniaSimulator/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
  </Reference>
@@ -928,6 +934,12 @@
       <Project>{4A416442-D9DC-3191-107A-47B08805F0CE}</Project>      <Name>SteamVR</Name>    </ProjectReference>
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{3B16146F-AF10-5822-6473-EFD253380655}</Project>      <Name>SteamVR_Windows_EditorHelper</Name>    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{FB1B7DA0-F744-5097-9AFF-AFB1A099E10F}</Project>      <Name>Unity.Recorder.Editor</Name>    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.csproj">
+      <Project>{4CBC650C-6D87-7065-3A12-F12DA6BB1988}</Project>      <Name>Unity.Recorder</Name>    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Samples.csproj">
+      <Project>{98BF1FBA-CB9F-3EF8-D50D-052F03712867}</Project>      <Name>Unity.Recorder.Samples</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
